@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: linear-gradient(45deg, rgba(110,8,157,0.9703481978728992) 0%, rgba(146,11,193,1) 44%, rgba(169,59,248,1) 100%);;
+}
+
+img{
+    width: 70px;
+}
+
+.box-game{
+    width: 350px;
+    height: 325px;
+    background-color: #f7f7f7;
+    border-radius: 20px;
+    box-shadow: 7px 6px 20px -5px rgba(0,0,0,0.43);
+
+     -webkit-touch-callout: none;
+   -webkit-user-select: none;
+   -khtml-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+    user-select: none;
+}
+
+.options p{
+    text-align: center;
+    padding: 10px;
+    width: 90%;
+    margin: 0px auto 10px auto;
+    color: #7D2AE8;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.hands{
+    width: 90%;
+    margin: 15px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px 0px;
+}
+
+.right img{
+    transform: rotate(90deg);
+}
+
+.left img{
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.container.start .left{
+    animation:  userShakes 0.7s ease infinite;
+    transform-origin: right;
+}
+.container.start .right{
+    animation:  computerShakes 0.7s ease infinite;
+    transform-origin: left;
+}
+
+@keyframes userShakes{
+    50%{
+        transform: rotate(10deg);
+    }
+}
+
+@keyframes computerShakes{
+    50%{
+        transform: rotate(-10deg);
+    }
+}
+
+.choices{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    margin: auto;
+    padding: 20px 0px;
+
+}
+
+.choices img{
+    width: 40px;
+}
+
+.choices span{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    color: #7c2ae8;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: .3s;
+}
+
+.choices span:hover{
+    opacity: 1;
+    scale: 1.1;
+}
